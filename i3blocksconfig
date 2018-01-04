@@ -1,0 +1,188 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator=false
+separator_block_width=0
+markup=none
+
+
+#[rofi-calendar]
+#command=/usr/lib/i3blocks/rofi-calendar | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+#markup=pango
+#interval=5
+#separator_block_width=9
+
+[text]
+full_text=<span color="#f9f9f9" background="#BF0D1F"> Gmail</span>
+markup=pango
+
+[email]
+command=/usr/lib/i3blocks/email | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+interval=300
+#min_width=Gmail 999
+align=center
+separator_block_width=9
+
+# Key indicators
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11
+
+
+
+[text]
+full_text=<span color="#f9f9f9" background="#BF0D1F"> ♪</span>
+markup=pango
+
+
+# email indicator
+#
+# The irst parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+[volume]
+command=/usr/lib/i3blocks/volume | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+instance=Master
+#instance=PCM
+interval=once
+signal=10
+separator_block_width=9
+
+
+[text]
+full_text=<span color="#f9f9f9" background="#BF0D1F"> MEM</span>
+markup=pango
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+command=/usr/lib/i3blocks/memory | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+interval=30
+
+
+[text]
+full_text=<span color="#f9f9f9" background="#BF0D1F"> SSD</span>
+markup=pango
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+#label=<span color="#f9f9f9" background="#BF0D1F">SSD</span>
+command=/usr/lib/i3blocks/disk | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+instance=/
+interval=30
+
+
+[text]
+full_text=<span color="#f9f9f9" background="#BF0D1F"> CPU</span>
+markup=pango
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+#label=CPU
+command=/usr/lib/i3blocks/cpu_usage | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+interval=10
+min_width=CPU 1%
+align=left
+# Gap for variable length block
+separator_block_width=2
+
+# Network interface monitoring
+#
+# If the instance is not specified, use the interface used for default route.
+# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+[iface]
+command=/usr/lib/i3blocks/iface | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+instance=wlp1s0
+interval=10
+
+[wifi]
+command=/usr/lib/i3blocks/wifi | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+instance=wlp1s0
+interval=50
+
+[bandwidth]
+command=/usr/lib/i3blocks/bandwidth | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+instance=wlp1s0
+interval=2
+min_width=IN 250K  OUT 250K 
+align=left
+# Gap for variable length block
+separator_block_width=9
+
+
+[text]
+full_text=<span color="#f9f9f9" background="#BF0D1F"> BAT</span>
+markup=pango
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+command=/usr/lib/i3blocks/battery | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+#label=BAT
+#label=⚡
+#instance=1
+interval=30
+separator_block_width=9
+
+
+# Date Time
+#
+[rofi-calendar]
+command=/usr/lib/i3blocks/rofi-calendar | awk '{print "<span color=\"#f9f9f9\" background=\"#BF0D1F\"> "$0" </span>"}'
+markup=pango
+interval=5
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=vlc
+#interval=5
+#signal=10
