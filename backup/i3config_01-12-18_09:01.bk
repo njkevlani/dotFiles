@@ -2,7 +2,6 @@ set $mod Mod1
 set $win Mod4
 #font pango:DejaVu Sans Mono 10
 font pango:Iosevka Medium 10
-#font pango:SpaceMono Nerd Font Mono Bold 10
 
 set $coloract "#ad9765"
 set $colorin "#625539"
@@ -89,9 +88,9 @@ set $ws4 4 
 set $ws5 5
 set $ws6 6
 set $ws7 7
-set $ws8 8 Book
-set $ws9 9 Media
-set $ws10 10 
+set $ws8 8 
+set $ws9 9 
+set $ws10 10 
 #
 #
 #
@@ -167,7 +166,7 @@ bar {
     background #000000
     statusline #f9f9f9
     #focused_workspace #888888 #d64937 #f9f9f9
-    focused_workspace #888888 #BF0D1F #f9f9f9  
+    focused_workspace #888888 #BF0D1F #f9f9f9
     #focused_workspace #f9f9f9 #272822 #f9f9f9
     #inactive_workspace #333333 #555555 #f9f9f9
     #inactive_workspace #2E2F29 #2E2F29 #f9f9f9
@@ -184,19 +183,6 @@ client.focused          #d64937   #d64937   #222222   #2e9ef4
 client.focused_inactive #333333   #555555   #bbbbbb   #484e50
 client.unfocused        #333333   #333333   #888888   #292d2e
 client.urgent           #2f343a   #900000   #ffffff   #900000
-
-#set_from_resource $fg i3wm.color7 #f0f0f0
-#set_from_resource $bg i3wm.color2 #f0f0f0
-#
-## class                 border  backgr. text indicator child_border
-#client.focused          $bg     $bg     $fg  $bg       $bg
-#client.focused_inactive $bg     $bg     $fg  $bg       $bg
-#client.unfocused        $bg     $bg     $fg  $bg       $bg
-#client.urgent           $bg     $bg     $fg  $bg       $bg
-#client.placeholder      $bg     $bg     $fg  $bg       $bg
-#
-#client.background       $bg
-
 
 # Startup
 
@@ -279,3 +265,5 @@ new_window pixel 0
 
 #new_window none
 hide_edge_borders both
+
+Nilesh

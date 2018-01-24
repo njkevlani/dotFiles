@@ -117,7 +117,6 @@ CURRENT_TERMINAL=`ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)`
 if [ "$CURRENT_TERMINAL" == "xfce4-terminal" ]; then
     # PROMPT_COMMAND=_prompt
     PS1=$'\[\033[01;32m\][\[\033[01;31m\]$?\[\033[01;32m\]]-[\[\033[01;94m\]\w \[\033[01;31m\]`lsbytesum`\[\033[01;32m\]]-[\[\033[01;94m\]\!\[\033[01;32m\]]-λ\[\033[0;0m\] '
-
 else
     PS1=$'\[\033[01;32m\][\[\033[01;31m\]$?\[\033[01;32m\]]-[\[\033[01;94m\]$PWD \[\033[01;31m\]`lsbytesum`\[\033[01;32m\]]-[\[\033[01;94m\]\!\[\033[01;32m\]]->\[\033[0;0m\] '
 fi
@@ -125,3 +124,5 @@ fi
 
 #ᐅ
 #▶
+# Last command remaining
+# Size of folder remaining

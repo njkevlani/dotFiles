@@ -30,10 +30,10 @@ separator_block_width=0
 markup=none
 
 
-#[text]
-#full_text=<span color="#f9f9f9" background="#BF0D1F"> This is last chance </span>
-#markup=pango
-#separator_block_width=9
+[text]
+full_text=<span color="#f9f9f9" background="#BF0D1F"> This is last chance </span>
+markup=pango
+separator_block_width=9
 
 
 # Date Time
